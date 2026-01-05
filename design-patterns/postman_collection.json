@@ -1,0 +1,332 @@
+{
+  "info": {
+    "name": "NestJS Design Patterns API",
+    "description": "Complete API collection for testing all 23 design patterns",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Creational Patterns",
+      "item": [
+        {
+          "name": "Singleton - Get Config",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/patterns/singleton/config"
+          }
+        },
+        {
+          "name": "Singleton - Set Config",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/singleton/config",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key\": \"features.darkMode\",\n  \"value\": true\n}"
+            }
+          }
+        },
+        {
+          "name": "Factory - Send Email",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/factory/send",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"email\",\n  \"recipient\": \"user@example.com\",\n  \"message\": \"Your order has been confirmed\",\n  \"metadata\": {\"subject\": \"Order Confirmation\"}\n}"
+            }
+          }
+        },
+        {
+          "name": "Factory - Multi-Channel",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/factory/send-multiple",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"types\": [\"email\", \"sms\", \"push\"],\n  \"recipient\": \"user@example.com\",\n  \"message\": \"Urgent notification!\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Abstract Factory - Process Payment",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/abstract-factory/process-payment",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"provider\": \"stripe\",\n  \"amount\": 99.99,\n  \"currency\": \"USD\",\n  \"cardToken\": \"tok_visa\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Builder - Build Sales Report",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/patterns/builder/build-sales-report"
+          }
+        },
+        {
+          "name": "Prototype - Clone from Template",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/prototype/clone-from-template",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"templateType\": \"electronics\",\n  \"customizations\": {\n    \"name\": \"Wireless Headphones\",\n    \"price\": 199.99\n  }\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Structural Patterns",
+      "item": [
+        {
+          "name": "Adapter - Process Payment",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/adapter/process-payment",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 250.00,\n  \"currency\": \"USD\",\n  \"customerEmail\": \"customer@example.com\",\n  \"cardToken\": \"card_token_123\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Facade - Place Order",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/facade/place-order",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": \"PROD-123\",\n  \"quantity\": 2,\n  \"price\": 49.99,\n  \"customerEmail\": \"customer@example.com\",\n  \"paymentToken\": \"tok_visa_4242\",\n  \"shippingAddress\": {\n    \"street\": \"123 Main St\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"zip\": \"10001\",\n    \"country\": \"USA\"\n  }\n}"
+            }
+          }
+        },
+        {
+          "name": "Decorator - Get User",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/decorator/get-user",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"1\",\n  \"decorators\": [\"logging\", \"caching\", \"authorization\"]\n}"
+            }
+          }
+        },
+        {
+          "name": "Proxy - Load Document",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/proxy/load-document",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documentId\": \"DOC-123\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Flyweight - Render Icons",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/flyweight/render-icons",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"icons\": [\n    {\"type\": \"home\", \"x\": 10, \"y\": 20, \"color\": \"blue\"},\n    {\"type\": \"home\", \"x\": 30, \"y\": 40, \"color\": \"red\"},\n    {\"type\": \"settings\", \"x\": 50, \"y\": 60, \"color\": \"green\"}\n  ]\n}"
+            }
+          }
+        },
+        {
+          "name": "Composite - Get Filesystem",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/patterns/composite/filesystem"
+          }
+        },
+        {
+          "name": "Bridge - Send Message",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/bridge/send-message",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"encrypted\",\n  \"channel\": \"email\",\n  \"content\": \"Secret message\",\n  \"recipient\": \"user@example.com\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Behavioral Patterns",
+      "item": [
+        {
+          "name": "Chain of Responsibility - Approve Loan",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/chain-of-responsibility/approve-loan",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 50000,\n  \"creditScore\": 720,\n  \"income\": 80000,\n  \"employmentYears\": 5\n}"
+            }
+          }
+        },
+        {
+          "name": "Observer - Update Stock Price",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/observer/update-price",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stock\": \"AAPL\",\n  \"price\": 185.50\n}"
+            }
+          }
+        },
+        {
+          "name": "Command - Execute Insert",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/command/execute",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"commandType\": \"insert\",\n  \"id\": \"rec-123\",\n  \"data\": {\"name\": \"John Doe\", \"email\": \"john@example.com\"}\n}"
+            }
+          }
+        },
+        {
+          "name": "Command - Undo",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/command/undo"
+          }
+        },
+        {
+          "name": "Interpreter - Execute Query",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/interpreter/query",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"SELECT * WHERE city='NY'\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Iterator - Iterate Collection",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/patterns/iterator/iterate"
+          }
+        },
+        {
+          "name": "Mediator - Demo Chat",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/patterns/mediator/demo"
+          }
+        },
+        {
+          "name": "Memento - Write Text",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/memento/write",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"Hello World! \"\n}"
+            }
+          }
+        },
+        {
+          "name": "Memento - Undo",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/memento/undo"
+          }
+        },
+        {
+          "name": "State - Create Order",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/state/create",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": \"ORD-12345\"\n}"
+            }
+          }
+        },
+        {
+          "name": "State - Process Order",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/state/process",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": \"ORD-12345\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Strategy - Calculate Shipping",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/strategy/calculate",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"strategy\": \"express\",\n  \"weight\": 5,\n  \"distance\": 100\n}"
+            }
+          }
+        },
+        {
+          "name": "Template Method - Process Data",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/template-method/process",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"format\": \"json\",\n  \"data\": [{\"name\": \"Item 1\"}, {\"name\": \"Item 2\"}]\n}"
+            }
+          }
+        },
+        {
+          "name": "Visitor - Calculate Tax",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/patterns/visitor/calculate",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"visitorType\": \"tax\"\n}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000/api",
+      "type": "string"
+    }
+  ]
+}
